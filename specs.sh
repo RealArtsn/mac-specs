@@ -10,4 +10,4 @@ echo 'CPU: '$CPU
 echo 'RAM: '$RAM'GB'
 echo 'Storage 1: '$HDD1
 echo 'Storage 2: '$HDD2
-echo 'Battery Health: '$BATT'%"
+echo 'Battery Health: '$BATT'%
