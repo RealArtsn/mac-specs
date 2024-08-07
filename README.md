@@ -1,4 +1,5 @@
 # mac-specs
+![Screenshot of terminal running script](example.png)
 ## Overview
 This script retrieves system specifications and battery health from the Mac terminal. This script was written for efficient documentation of MacBooks in recovery mode. 
 
@@ -16,3 +17,4 @@ In addition, a QR scanner can be used with some models to reduce manual input. T
 `curl` has been observed to fail in recovery mode with `curl: (4) A requested feature, protocol or option was not found built-in in this libcurl due to a build-time decision.` on the following models:
 
 **2017 MacBook Pro (A1708)**
+**2017 MacBook Pro (A1706)**
