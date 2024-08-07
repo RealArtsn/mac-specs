@@ -1,4 +1,4 @@
-RAM=$(expr sysctl -n hw.memsize) / $((1024**3))
+RAM=$(expr sysctl -n hw.memsize / $((1024**3)))
 CPU=$(sysctl -a | grep brand_string | awk -F ':' '{print $2}')
 HDD1=$(diskutil info disk0 | grep 'Disk Size' | awk -F ' ' '{print $2$3}')
 HDD2=$(diskutil info disk1 | grep 'Disk Size' | awk -F ' ' '{print $2$3}')
