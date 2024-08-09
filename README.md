@@ -13,6 +13,9 @@ In addition, a QR scanner can be used with some models to reduce manual input. T
 
 ![QR Code](qr.png "curl https://raw.githubusercontent.com/RealArtsn/mac-specs/main/specs.sh | bash")
 
+## Generating QR Codes
+QR codes can be generated with `generate_qr.py`. This python script depends on the `segno` package. `python generate_qr.py` 
+
 ## Issues
 `curl` has been observed to fail in recovery mode with `curl: (4) A requested feature, protocol or option was not found built-in in this libcurl due to a build-time decision.` on the following models:
 
