@@ -1,3 +1,5 @@
+echo
+echo '== Mac Specs Script by Joel (v0.1.0) =='
 RAM=$(expr $(sysctl -n hw.memsize) / $((1024**3)))
 CPU=$(sysctl -a | grep brand_string | awk -F ':' '{print $2}')
 DISK=$(diskutil list | grep internal | awk -F ' ' '{print $1}')
