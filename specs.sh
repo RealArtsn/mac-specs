@@ -9,5 +9,13 @@ DESIGN=$(ioreg -l -w0 | grep '\"DesignCapacity\" =' | awk -F ' ' '{print $5}')
 BATT=$((100*$MAX/$DESIGN))
 echo 'CPU: '$CPU
 echo 'RAM: '$RAM'GB'
+# Display GPU info if system_profiler available
+if (ls /usr/sbin/system_profiler &> /dev/null)
+then
+    echo 'Graphics:'
+    /usr/sbin/system_profiler SPDisplaysDataType | grep Chipset
+else
+    echo 'Graphics information unavailable.'
+fi
 echo 'Physical Storage: '$CAPACITY
 echo 'Battery Health: '$BATT'%'
