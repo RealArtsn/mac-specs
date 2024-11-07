@@ -7,6 +7,7 @@ CAPACITY=$(diskutil info $DISK | grep 'Disk Size' | awk -F ' ' '{print $3$4}')
 MAX=$(ioreg -l -w0 | grep '\"MaxCapacity\" =' | awk -F ' ' '{print $5}')
 DESIGN=$(ioreg -l -w0 | grep '\"DesignCapacity\" =' | awk -F ' ' '{print $5}')
 BATT=$((100*$MAX/$DESIGN))
+CYCLES=$(ioreg -l -w0 | grep '"CycleCount" =' | awk -F ' ' '{print $5}')
 echo 'CPU: '$CPU
 echo 'RAM: '$RAM'GB'
 # Display GPU info if system_profiler available
@@ -19,3 +20,5 @@ else
 fi
 echo 'Physical Storage: '$CAPACITY
 echo 'Battery Health: '$BATT'%'
+echo 'Battery Cycles: '$CYCLES
+echo '=='
