@@ -12,7 +12,10 @@ CYCLES=$(ioreg -l -w0 | grep '"CycleCount" =' | awk -F ' ' '{print $5}')
 # https://apple.stackexchange.com/questions/98080/can-a-macs-model-year-be-determined-with-a-terminal-command
 if ! defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist 'ModelNames' 2>/dev/null | cut -sd '"' -f 4 | uniq | grep 'Mac'
 then
-    echo 'Model info not available.'
+    if ! defaults read ~/Library/Preferences/com.apple.SystemProfiler.plist 'CPU Names' 2>/dev/null | cut -sd '"' -f 4 | uniq | grep 'Mac'
+    then
+        echo 'Model info not available.'
+    fi
 fi
 echo 'CPU: '$CPU
 echo 'RAM: '$RAM'GB'
